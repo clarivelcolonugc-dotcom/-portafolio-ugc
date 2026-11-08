@@ -44,26 +44,26 @@ window.PORTFOLIO = {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,100;1,9..144,300..600,100&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --bg:#FDF6F4; --surface:#FFFFFF; --band:#F9E6E8; --blush:#F6D3DC;
-  --fg:#3A1F2B; --muted:#7A5866; --line:#EED5D9;
-  --accent:#B03A68; --on-accent:#FFFFFF;
-  --dark:#4A1F33; --on-dark:#FCEFF3; --on-dark-muted:#E4BCCB; --tile:#5C2A41; --tile-line:#7A3F5A;
+  --bg:#F6F3EE; --surface:#FFFFFF; --band:#EEE9E1; --blush:#E6DED2;
+  --fg:#1C1A17; --muted:#6A635A; --line:#E0D9CD;
+  --accent:#8A6A42; --on-accent:#FFFFFF; --gold:#C6A76E;
+  --dark:#171513; --on-dark:#F5F1EA; --on-dark-muted:#B8AFA2; --tile:#25211D; --tile-line:#3B352E;
   --f-display:"Fraunces", Georgia, "Times New Roman", serif;
   --f-body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#1C1116; --surface:#26171E; --band:#22141A; --blush:#3A2029;
-  --fg:#F8E9EE; --muted:#CBA8B6; --line:#3D2631;
-  --accent:#F290B5; --on-accent:#2A0F1B;
-  --dark:#140B10; --on-dark:#F8E9EE; --on-dark-muted:#CBA8B6; --tile:#2C1A22; --tile-line:#4A2C39;
+  --bg:#12100E; --surface:#1C1916; --band:#171512; --blush:#2A251F;
+  --fg:#F3EEE6; --muted:#B5AB9D; --line:#2F2A24;
+  --accent:#D2B47E; --on-accent:#1A1612; --gold:#D2B47E;
+  --dark:#0C0B0A; --on-dark:#F3EEE6; --on-dark-muted:#B5AB9D; --tile:#201C18; --tile-line:#3A342C;
   color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#1C1116; --surface:#26171E; --band:#22141A; --blush:#3A2029;
-  --fg:#F8E9EE; --muted:#CBA8B6; --line:#3D2631;
-  --accent:#F290B5; --on-accent:#2A0F1B;
-  --dark:#140B10; --on-dark:#F8E9EE; --on-dark-muted:#CBA8B6; --tile:#2C1A22; --tile-line:#4A2C39;
+  --bg:#12100E; --surface:#1C1916; --band:#171512; --blush:#2A251F;
+  --fg:#F3EEE6; --muted:#B5AB9D; --line:#2F2A24;
+  --accent:#D2B47E; --on-accent:#1A1612; --gold:#D2B47E;
+  --dark:#0C0B0A; --on-dark:#F3EEE6; --on-dark-muted:#B5AB9D; --tile:#201C18; --tile-line:#3A342C;
   color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -180,7 +180,9 @@ nav a.on{color:var(--fg);background:var(--blush)}
 .rot span{grid-area:1/1;font-style:italic;color:var(--accent);white-space:nowrap}
 .rot span:not(.cur){opacity:0;transform:translateY(.35em);pointer-events:none}
 .rot span.out{opacity:0;transform:translateY(-.35em)}
-@media (prefers-reduced-motion:no-preference){.rot span{transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1)}}
+@media (prefers-reduced-motion:no-preference){.rot span{transition:opacity .3s ease, transform .45s cubic-bezier(.2,.8,.2,1)}.rot span.cur{transition-delay:.3s}}
+.photo .ph .mono{font-family:var(--f-display);font-variation-settings:"SOFT" 100,"opsz" 144;font-style:italic;font-weight:300;font-size:clamp(96px,14vw,150px);line-height:1;color:var(--accent);letter-spacing:-.04em}
+.photo .ph .rule{width:48px;height:1px;background:var(--accent);opacity:.5;margin:10px 0 6px}
 
 @keyframes rise{from{opacity:.001;transform:translateY(18px)}}
 
@@ -253,8 +255,8 @@ nav a.on{color:var(--fg);background:var(--blush)}
 .cam .rec{position:absolute;top:8px;left:34px;display:flex;align-items:center;gap:6px;background:color-mix(in srgb, var(--surface) 80%, transparent);padding:3px 10px;border-radius:999px}
 .cam .rec::before{content:"";width:7px;height:7px;border-radius:50%;background:#E0475B}
 .cam .tcode{position:absolute;top:8px;right:34px;background:color-mix(in srgb, var(--surface) 80%, transparent);padding:3px 10px;border-radius:999px;font-variant-numeric:tabular-nums}
-.cam .fmt{position:absolute;bottom:8px;right:34px;background:color-mix(in srgb, var(--surface) 80%, transparent);padding:3px 10px;border-radius:999px}
-.h-visual .sticker{position:absolute;top:-6px;left:-10px;display:block;width:118px;height:118px;background:var(--bg);border-radius:50%;z-index:3;color:var(--accent)}
+.cam .fmt{position:absolute;top:8px;left:34px;background:color-mix(in srgb, var(--surface) 80%, transparent);padding:3px 10px;border-radius:999px}
+.h-visual .sticker{position:absolute;top:-10px;right:-10px;display:block;width:118px;height:118px;background:var(--bg);border-radius:50%;z-index:3;color:var(--accent)}
 .fc{position:absolute;z-index:3;display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;font-weight:500;font-size:15px;background:color-mix(in srgb, var(--surface) 85%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);box-shadow:0 14px 30px -18px color-mix(in srgb, var(--accent) 60%, transparent);color:var(--fg)}
 .fc svg{color:var(--accent)}
 .fc1{top:20%;right:0}
@@ -263,7 +265,7 @@ nav a.on{color:var(--fg);background:var(--blush)}
 .namecard{position:absolute;z-index:3;bottom:8px;left:40px;display:grid;padding:12px 20px;border-radius:20px;background:var(--fg);color:var(--bg);transform:rotate(-2deg)}
 .namecard .n1{font-family:var(--f-display);font-variation-settings:"SOFT" 100;font-style:italic;font-size:22px;line-height:1.2}
 .namecard .n2{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;opacity:.8}
-@media (max-width:480px){.h-visual{padding:20px 12px 36px}.h-visual .sticker{width:88px;height:88px;left:-4px;top:-4px}.h-visual .sticker svg{width:88px;height:88px}.fc{min-height:36px;font-size:13px;padding:0 12px}.namecard{left:20px}}
+@media (max-width:480px){.h-visual{padding:20px 12px 36px}.h-visual .sticker{width:88px;height:88px;right:-4px;top:-4px}.h-visual .sticker svg{width:88px;height:88px}.fc{min-height:36px;font-size:13px;padding:0 12px}.namecard{left:20px}}
 @media (prefers-reduced-motion:no-preference){
   .h-copy > *{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
   .h-copy > :nth-child(2){animation-delay:.08s}.h-copy > :nth-child(3){animation-delay:.16s}.h-copy > :nth-child(4){animation-delay:.24s}.h-copy > :nth-child(5){animation-delay:.32s}
@@ -282,6 +284,83 @@ nav a.on{color:var(--fg);background:var(--blush)}
 .vframe .vplay{z-index:1;border:0;color:#FFFFFF;background:rgba(0,0,0,.35);cursor:pointer}
 .clip.playing .vplay{opacity:0}
 .clip.playing:hover .vplay{opacity:1}
+/* ---------- Portada: tu foto primero ---------- */
+.hero3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;padding-block:32px 96px}
+@media (max-width:860px){.hero3{grid-template-columns:minmax(0,1fr);gap:36px;padding-block:8px 72px}}
+.photo3{transform:none;aspect-ratio:4/5;width:100%;border-radius:999px 999px 32px 32px;box-shadow:0 50px 90px -50px color-mix(in srgb, var(--accent) 75%, transparent)}
+.photo3 .ph{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:0;color:color-mix(in srgb, var(--accent) 22%, transparent)}.photo3 .ph svg{width:70%;height:auto;display:block}
+.photo3 .ph small{position:absolute;top:24%;left:0;right:0;text-align:center;color:var(--muted)}
+.h3-copy h1{font-family:var(--f-display);font-variation-settings:"SOFT" 100,"opsz" 144;font-style:italic;font-weight:300;font-size:clamp(64px,9vw,136px);line-height:.92;letter-spacing:-.035em;margin:20px 0 0;color:var(--fg)}
+.h3-niches{font-family:var(--f-display);font-variation-settings:"SOFT" 100;font-size:clamp(22px,2.4vw,30px);margin:22px 0 0;color:var(--accent)}
+.h3-niches i{font-style:normal;color:var(--line);margin:0 6px}
+.h3-sub{margin:10px 0 0;color:var(--muted);font-size:16px}
+.hero3 .ctas{margin-top:36px}
+@media (prefers-reduced-motion:no-preference){
+  .h3-copy > *{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .h3-copy > :nth-child(2){animation-delay:.08s}.h3-copy > :nth-child(3){animation-delay:.16s}.h3-copy > :nth-child(4){animation-delay:.24s}.h3-copy > :nth-child(5){animation-delay:.32s}
+}
+.hero3{position:relative}
+.h3-visual{position:relative;padding:20px 36px 20px 20px}
+.h3-visual .sticker{position:absolute;top:-6px;right:0;left:auto;display:block;width:118px;height:118px;background:var(--bg);border-radius:50%;z-index:3;color:var(--accent)}
+.h3-visual .fc1{top:30%;right:-4px}
+.h3-visual .fc2{top:56%;left:-8px}
+.h3-visual .fc3{bottom:12%;right:6px}
+.photo3 .cam{inset:20px 24px}
+.photo3 .cam .rec{left:50%;transform:translateX(-110%);top:auto;bottom:0}
+.photo3 .cam .tcode{left:50%;right:auto;transform:translateX(5%);top:auto;bottom:0}
+.h3-rot{font-family:var(--f-display);font-variation-settings:"SOFT" 100;font-size:clamp(24px,2.6vw,34px);line-height:1.2;margin:22px 0 0;color:var(--fg)}
+.hero3 .h-tags{margin-top:28px}
+@media (max-width:480px){.h3-visual{padding:14px 18px 14px 10px}.h3-visual .sticker{width:88px;height:88px}.h3-visual .sticker svg{width:88px;height:88px}}
+.h3-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.avail{display:inline-flex;align-items:center;gap:8px;min-height:30px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;color:var(--fg)}
+.avail .dot{width:7px;height:7px;border-radius:50%;background:#3FA66B;box-shadow:0 0 0 0 #3FA66B}
+.h3-facts{display:flex;flex-wrap:wrap;margin:36px 0 0;padding-top:22px;border-top:1px solid var(--line);max-width:520px}
+.h3-facts div{flex:1 1 0;min-width:110px;padding-right:18px}
+.h3-facts div + div{padding-left:18px;border-left:1px solid var(--line)}
+.h3-facts dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.h3-facts dd{margin:4px 0 0;font-family:var(--f-display);font-variation-settings:"SOFT" 100;font-size:22px;color:var(--fg)}
+.mini{position:absolute;z-index:3;left:-14px;bottom:8%;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:18px;background:var(--fg);color:var(--bg);box-shadow:0 20px 40px -20px rgba(0,0,0,.45);transform:rotate(-3deg)}
+.mini-play{width:38px;height:38px;border-radius:12px;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center}
+.mini-txt{display:grid;gap:2px;min-width:120px}
+.mini-txt b{font-size:13px;font-weight:600}
+.mini-txt i{font-style:normal;font-family:var(--f-mono);font-size:10.5px;opacity:.75}
+.mini-bar{display:block;height:3px;border-radius:3px;background:color-mix(in srgb, var(--bg) 25%, transparent);margin-top:5px;overflow:hidden}
+.mini-bar span{display:block;height:100%;width:40%;background:var(--accent)}
+.h3-visual .fc2{top:46%}
+@media (prefers-reduced-motion:no-preference){
+  .mini{animation:float 7.5s ease-in-out infinite;animation-delay:-3s}
+  .mini-bar span{animation:bar 6s linear infinite}
+  @keyframes bar{from{width:0}to{width:100%}}
+  .avail .dot{animation:pulse2 2s ease-out infinite}
+  @keyframes pulse2{to{box-shadow:0 0 0 7px transparent}}
+}
+@media (max-width:480px){.mini{left:-2px}.h3-facts dd{font-size:18px}}
+.ghost{position:absolute;z-index:0;width:32%;aspect-ratio:9/16;border-radius:24px;background:linear-gradient(160deg,var(--tile),var(--dark));border:1px solid var(--tile-line);box-shadow:0 30px 60px -30px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;color:var(--on-dark)}
+.ghost .gplay{width:52px;height:52px;border-radius:50%;background:color-mix(in srgb, var(--on-dark) 16%, transparent);display:flex;align-items:center;justify-content:center}
+.ghost .gtag{position:absolute;top:14px;left:14px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.12);border-radius:999px;padding:3px 10px}
+.g1{left:-4%;top:12%;transform:rotate(-9deg)}
+.g2{right:-2%;top:44%;transform:rotate(8deg)}
+.h3-visual .photo3{z-index:1}
+.h3-visual{isolation:isolate}.h3-copy{position:relative;z-index:2}
+@media (prefers-reduced-motion:no-preference){.g1{animation:sway1 8s ease-in-out infinite}.g2{animation:sway2 9s ease-in-out infinite}
+@keyframes sway1{50%{transform:rotate(-6deg) translateY(-12px)}}@keyframes sway2{50%{transform:rotate(11deg) translateY(-10px)}}}
+@media (max-width:860px){.g1{left:-4%}.g2{right:-4%}}.hero3{background:var(--dark);color:var(--on-dark);border-radius:40px;padding:64px clamp(20px,4vw,64px) 80px;margin-top:8px;overflow:hidden;isolation:isolate}
+.hero3::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(45% 60% at 25% 50%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 70%),radial-gradient(30% 40% at 90% 10%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%)}
+.hero3 .h3-copy h1{color:var(--on-dark)}
+.hero3 .h3-rot{color:var(--on-dark)}
+.hero3 .rot span{color:#D8BE94}
+.hero3 .h3-sub,.hero3 .h3-facts dt{color:var(--on-dark-muted)}
+.hero3 .h3-facts dd{color:var(--on-dark)}
+.hero3 .h3-facts,.hero3 .h3-facts div + div{border-color:var(--tile-line)}
+.hero3 .eyebrow{color:#D8BE94}
+.hero3 .avail{background:transparent;border-color:var(--tile-line);color:var(--on-dark)}
+.hero3 .btn-line{color:var(--on-dark);border-color:var(--on-dark-muted)}
+.hero3 .btn-line:hover{background:rgba(255,255,255,.08)}
+.hero3 .btn-solid{background:#D8BE94;border-color:#D8BE94;color:var(--dark)}
+.hero3 .h3-visual .sticker{background:var(--dark);color:#D8BE94}
+.hero3 .floaters svg{color:#D8BE94}
+.hero3 .ghost{background:linear-gradient(160deg,#3A332C,#141210)}.hero3 .h3-visual .sticker{color:var(--gold)}.hero3 .floaters svg{color:var(--gold)}.hero3 .h3-facts{border-top-color:color-mix(in srgb, var(--gold) 45%, transparent)}.hero3 .eyebrow .spark{color:var(--gold)}.brand .spark{color:var(--gold)}.track svg{color:var(--gold)}
+.hero3 .h3-copy h1{letter-spacing:-.03em}.hero3::before{opacity:.55}.photo3{background:radial-gradient(120% 90% at 30% 20%, #FFFFFF, #E4DACB)}.photo3 .ph{color:rgba(120,100,75,.18)}.fc svg{color:var(--accent)}.mini-play{background:var(--gold);color:#1C1A17}.mini-bar span{background:var(--gold)}
 </style>
 </head>
 <body>
@@ -306,39 +385,21 @@ nav a.on{color:var(--fg);background:var(--blush)}
 </header>
 
 <main>
-  <section class="wrap hero hero2">
+  <section class="wrap hero3">
     <div class="floaters" aria-hidden="true">
-      <svg style="left:44%;top:10%;width:18px;height:18px"><use href="#sp"/></svg>
-      <svg style="left:2%;bottom:8%;width:12px;height:12px"><use href="#sp"/></svg>
-      <svg style="left:52%;bottom:12%;width:22px;height:22px"><use href="#sp"/></svg>
+      <svg style="left:48%;top:8%;width:18px;height:18px"><use href="#sp"/></svg>
+      <svg style="left:94%;top:78%;width:14px;height:14px"><use href="#sp"/></svg>
+      <svg style="left:52%;bottom:10%;width:22px;height:22px"><use href="#sp"/></svg>
     </div>
-    <div class="h-copy">
-      <div class="eyebrow"><svg class="spark" aria-hidden="true"><use href="#sp"/></svg>UGC content creator</div>
-      <h1>Content that feels <span class="rot" id="rot" aria-live="off"><span class="cur">authentic</span><span>aesthetic</span><span>relatable</span><span>scroll-stopping</span></span><br>made with care.</h1>
-      <p class="lead">Hi! I'm <span data-bind="name">Bel Colon</span>, a bilingual UGC creator based in the Dominican Republic, working with brands worldwide. I make tech, beauty and lifestyle content: short, natural videos that show your product the way a real customer would.</p>
-      <div class="ctas">
-        <a class="btn btn-solid" href="#contact">Let's work together</a>
-        <a class="btn btn-line" href="#work">See my work</a>
-      </div>
-      <ul class="h-tags" aria-label="Quick facts">
-        <li><span class="dot"></span>Booking first collabs</li>
-        <li>Based in the DR · Working worldwide</li>
-        <li>Ships to: Miami, FL (US address)</li>
-        <li data-need="languages" data-bind="languages">Spanish · English</li>
-        <li data-need="handle">@<span data-bind="handle"></span></li>
-      </ul>
-    </div>
-    <div class="h-visual">
-      <figure class="photo" id="portrait">
+    <div class="h3-visual">
+      <div class="ghost g1" aria-hidden="true"><span class="gtag">Beauty · GRWM</span><span class="gplay"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></div>
+      <div class="ghost g2" aria-hidden="true"><span class="gtag">Tech · Unboxing</span><span class="gplay"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></div>      <figure class="photo photo3" id="portrait">
         <div class="ph">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.6"/></svg>
-          <span data-bind="name">Bel Colon</span>
-          <small>UGC creator · Tech · Beauty · Lifestyle</small>
+          <svg width="120" height="150" viewBox="0 0 120 150" fill="currentColor" aria-hidden="true"><circle cx="60" cy="46" r="28"/><path d="M8 150c0-34 23-58 52-58s52 24 52 58z"/></svg>
+          <small>Your photo here</small>
         </div>
         <div class="cam" aria-hidden="true">
-          <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
           <span class="rec">REC</span><span class="tcode" id="tcode">00:00:00</span>
-          <span class="fmt">9:16 · 1080p</span>
         </div>
       </figure>
       <div class="sticker" aria-hidden="true">
@@ -348,10 +409,28 @@ nav a.on{color:var(--fg);background:var(--blush)}
           <use href="#sp" x="46" y="46" width="28" height="28"/>
         </svg>
       </div>
+      <div class="mini" aria-hidden="true">
+        <span class="mini-play"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
+        <span class="mini-txt"><b>New video</b><i>Unboxing · 0:30</i><span class="mini-bar"><span></span></span></span>
+      </div>
       <div class="fc fc1" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>Tech</div>
       <div class="fc fc2" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21h6M10 21V11h4v10M9.5 11l1-6h3l1 6"/></svg>Beauty</div>
       <div class="fc fc3" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M9 3.5v2M12 3.5v2"/></svg>Lifestyle</div>
-      <div class="namecard"><span class="n1" data-bind="name">Bel Colon</span><span class="n2">UGC creator · Available worldwide</span></div>
+    </div>
+    <div class="h3-copy">
+      <div class="h3-top"><div class="eyebrow"><svg class="spark" aria-hidden="true"><use href="#sp"/></svg>UGC content creator</div><span class="avail"><span class="dot"></span>Booking first collabs</span></div>
+      <h1><span data-bind="name">Bel Colon</span></h1>
+      <p class="h3-rot">Content that feels <span class="rot" id="rot" aria-live="off"><span class="cur">authentic</span><span>aesthetic</span><span>relatable</span><span>scroll-stopping</span></span></p>
+      <p class="h3-sub">Bilingual <span aria-hidden="true">—</span> based in the DR, working worldwide.</p>
+      <div class="ctas">
+        <a class="btn btn-solid" href="#contact">Let's work together</a>
+        <a class="btn btn-line" href="#work">See my work</a>
+      </div>
+      <dl class="h3-facts">
+        <div><dt>Delivery</dt><dd><span data-bind="delivery">5–7</span> days</dd></div>
+        <div><dt>Format</dt><dd>9:16 · 1080p</dd></div>
+        <div><dt>Languages</dt><dd>ES · EN</dd></div>
+      </dl>
     </div>
   </section>
 
