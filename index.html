@@ -41,7 +41,7 @@ window.PORTFOLIO = {
 };
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,100;1,9..144,300..600,100&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@300;400;500&display=swap">
 <style>
 :root{
   --bg:#F6F3EE; --surface:#FFFFFF; --band:#EEE9E1; --blush:#E6DED2;
@@ -361,6 +361,151 @@ nav a.on{color:var(--fg);background:var(--blush)}
 .hero3 .floaters svg{color:#D8BE94}
 .hero3 .ghost{background:linear-gradient(160deg,#3A332C,#141210)}.hero3 .h3-visual .sticker{color:var(--gold)}.hero3 .floaters svg{color:var(--gold)}.hero3 .h3-facts{border-top-color:color-mix(in srgb, var(--gold) 45%, transparent)}.hero3 .eyebrow .spark{color:var(--gold)}.brand .spark{color:var(--gold)}.track svg{color:var(--gold)}
 .hero3 .h3-copy h1{letter-spacing:-.03em}.hero3::before{opacity:.55}.photo3{background:radial-gradient(120% 90% at 30% 20%, #FFFFFF, #E4DACB)}.photo3 .ph{color:rgba(120,100,75,.18)}.fc svg{color:var(--accent)}.mini-play{background:var(--gold);color:#1C1A17}.mini-bar span{background:var(--gold)}
+/* =================== LUXURY EDITORIAL =================== */
+:root{--bg:#FFFFFF;--surface:#FFFFFF;--band:#F7F5F1;--blush:#F0EDE8;--fg:#111111;--muted:#6B6863;--line:#E6E2DC;--accent:#111111;--on-accent:#FFFFFF;--gold:#A88B5A;--dark:#0E0E0E;--on-dark:#F5F3EF;--on-dark-muted:#A19D96;--tile:#1B1A19;--tile-line:#2E2C2A;--f-display:"Bodoni Moda",Didot,"Times New Roman",serif;--f-body:"Jost",system-ui,-apple-system,sans-serif;--f-mono:"Jost",system-ui,-apple-system,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#FFFFFF;--surface:#FFFFFF;--band:#F7F5F1;--blush:#F0EDE8;--fg:#111111;--muted:#6B6863;--line:#E6E2DC;--accent:#111111;--on-accent:#FFFFFF;--gold:#A88B5A;--dark:#0E0E0E;--on-dark:#F5F3EF;--on-dark-muted:#A19D96;--tile:#1B1A19;--tile-line:#2E2C2A;color-scheme:light}}
+body{font-weight:300;letter-spacing:.01em}
+.spark,.floaters,.sticker,.play::after{display:none!important}.track svg{width:7px;height:7px;color:var(--gold)}
+h2{font-weight:400;font-variation-settings:normal;letter-spacing:-.015em}
+h2 em,h1 em{color:inherit}
+.eyebrow{font-size:11px;letter-spacing:.34em;color:var(--fg);font-weight:400}
+.lead{font-weight:300}
+.btn{border-radius:0;min-height:54px;padding:0 36px;text-transform:uppercase;letter-spacing:.22em;font-size:11.5px;font-weight:500}
+.btn-solid{background:#111;border-color:#111;color:#FFF}
+.btn-solid:hover{background:#FFF;color:#111;border-color:#111}
+.btn-line{color:#111;border-color:#111}
+.btn-line:hover{background:#111;color:#FFF}
+.btn:hover{transform:none!important}
+header .wrap{padding-block:26px}
+.brand{font-family:var(--f-display);font-style:normal;text-transform:uppercase;letter-spacing:.28em;font-size:17px;font-weight:500}
+nav a{border-radius:0;text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--muted);padding:8px 12px}
+nav a:hover{background:none;color:var(--fg)}
+nav a.on{background:none;color:var(--fg);box-shadow:inset 0 -1px 0 var(--fg)}
+.progress{height:1px;background:var(--fg)}
+header.scrolled{box-shadow:0 1px 0 var(--line)}
+
+/* Hero */
+.lux-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(36px,7vw,112px);align-items:center;padding-block:24px 112px}
+@media (max-width:860px){.lux-hero{grid-template-columns:minmax(0,1fr);gap:44px;padding-block:8px 80px}}
+.lux-photo{position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(180deg,#F3F1ED,#E7E3DC)}
+.lux-photo .pf-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lux-photo .ph{position:absolute;inset:22px;border:1px solid rgba(17,17,17,.12);display:flex;align-items:center;justify-content:center}
+.lux-photo .ph span{font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
+.lux-cap{display:flex;justify-content:space-between;margin-top:14px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.lux-kicker{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--fg)}
+.lux-copy h1{font-family:var(--f-display);font-weight:400;text-transform:uppercase;font-size:clamp(58px,8.6vw,132px);line-height:.92;letter-spacing:.01em;margin:28px 0 0}
+.lux-rule{width:72px;height:1px;background:var(--fg);margin:36px 0 26px;transform-origin:left}
+.lux-niches{margin:0;font-size:12px;letter-spacing:.36em;text-transform:uppercase}
+.lux-niches span{color:var(--gold);margin:0 8px}
+.lux-line{margin:18px 0 0;font-family:var(--f-display);font-size:clamp(22px,2.2vw,28px);font-style:italic;color:var(--muted)}
+.lux-line .rot span{color:var(--fg)}
+.lux-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:20px 34px;margin-top:44px}
+.lux-link{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding-bottom:6px;background:linear-gradient(var(--fg),var(--fg)) left bottom/100% 1px no-repeat}
+.lux-link:hover{background-size:40% 1px}
+.lux-facts{display:flex;flex-wrap:wrap;margin:56px 0 0;border-top:1px solid var(--line)}
+.lux-facts div{flex:1 1 0;min-width:110px;padding:20px 18px 0 0}
+.lux-facts div + div{padding-left:18px;border-left:1px solid var(--line)}
+.lux-facts dt{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.lux-facts dd{margin:8px 0 0;font-family:var(--f-display);font-size:20px}
+.lux-avail{margin:36px 0 0;display:flex;align-items:center;gap:12px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.lux-avail span{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+@media (prefers-reduced-motion:no-preference){
+  .lux-photo{animation:luxIn 1.4s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes luxIn{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+  .lux-photo .pf-photo,.lux-photo .ph{animation:luxZoom 14s ease-out both}
+  @keyframes luxZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+  .lux-copy > *{animation:luxUp 1.1s cubic-bezier(.2,.7,.2,1) both}
+  .lux-copy > :nth-child(2){animation-delay:.12s}.lux-copy > :nth-child(3){animation:luxLine 1.2s cubic-bezier(.2,.7,.2,1) .4s both}
+  .lux-copy > :nth-child(4){animation-delay:.3s}.lux-copy > :nth-child(5){animation-delay:.4s}.lux-copy > :nth-child(6){animation-delay:.5s}.lux-copy > :nth-child(7){animation-delay:.6s}.lux-copy > :nth-child(8){animation-delay:.7s}
+  @keyframes luxUp{from{opacity:.001;transform:translateY(24px)}}
+  @keyframes luxLine{from{transform:scaleX(0)}}
+  .lux-avail span{animation:luxPulse 2.4s ease-in-out infinite}
+  @keyframes luxPulse{50%{opacity:.25}}
+  .lux-link{transition:background-size .4s}
+  .rot span{transition:opacity .6s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
+}
+
+/* Marquee */
+.marquee{background:var(--bg);border-color:var(--line);padding-block:24px}
+.track{font-weight:400;font-size:clamp(18px,2vw,24px);gap:64px}
+.track span{gap:64px}
+@media (prefers-reduced-motion:no-preference){.track{animation-duration:60s}}
+
+/* Work */
+.work{border-radius:0}
+.work .eyebrow{color:var(--on-dark-muted)}
+.frame,.vframe{border-radius:0;border-color:var(--tile-line)}
+.frame .tc,.frame .ratio,.frame .niche{border-radius:0;font-family:var(--f-body);letter-spacing:.2em;text-transform:uppercase;font-size:9.5px}
+.frame .play{border-radius:50%;background:none;border:1px solid currentColor;width:58px;height:58px}
+.clip:hover .frame{transform:none;box-shadow:none}
+.clip .t{font-family:var(--f-display)}
+.meta{letter-spacing:.24em;font-size:10px}
+.chip{border-radius:0;text-transform:uppercase;letter-spacing:.2em;font-size:10.5px;font-family:var(--f-body)}
+.chip .n{border-radius:0}
+.gal-note{letter-spacing:.2em;text-transform:uppercase;font-size:10.5px}
+
+/* Cards */
+.svc{border-radius:0;padding:34px 30px}
+.svc .tag{border-radius:0;background:none;padding:0;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-size:10px;font-family:var(--f-body)}
+.svc h3{font-family:var(--f-display);font-weight:400;font-size:24px}
+.svc:hover,.plan:hover{transform:none!important;box-shadow:none!important;border-color:var(--fg)!important}
+.steps li::before{border-radius:0;border:0;background:none!important;width:auto;height:auto;justify-content:flex-start;font-family:var(--f-display);font-size:44px;font-style:italic;color:var(--fg)!important;transform:none!important}
+.steps li.lit::before{color:var(--gold)!important}
+.steps h3{font-family:var(--f-display);font-weight:400;font-size:20px;margin-top:8px}
+.spec-card,.plan,.ratecard{border-radius:0}
+.spec-table dt{color:var(--muted);letter-spacing:.26em;font-size:10px;text-transform:uppercase;font-family:var(--f-body)}
+.plan .name,.plan .from{letter-spacing:.28em;font-family:var(--f-body)}
+.plan .price{font-family:var(--f-display);font-weight:400}
+.plan.feat{background:var(--band)}
+.plan .badge{border-radius:0;background:#111;color:#FFF;letter-spacing:.28em;font-family:var(--f-body);font-size:9.5px}
+.plan li::before{border-radius:0;width:14px;height:1px;background:var(--gold);transform:translateY(-5px)}
+.ratecard{border:1px solid var(--fg)}
+.ratecard p{font-family:var(--f-display)}
+
+/* Contact */
+.contact{background:#0E0E0E;color:#F5F3EF;border-radius:0}
+.contact .eyebrow{color:#A19D96;opacity:1}
+.contact h2 em{color:var(--gold)}
+.copy{border-radius:0;letter-spacing:.2em;text-transform:uppercase;font-family:var(--f-body);font-size:10.5px}
+.copy:hover{background:#F5F3EF;color:#0E0E0E}
+.mail span{font-family:var(--f-body);letter-spacing:.04em}
+.channels a{text-decoration:none;letter-spacing:.06em}
+.foot{font-family:var(--f-body);letter-spacing:.24em;text-transform:uppercase;font-size:10px;border-top-color:#2E2C2A}
+/* Luxury motion */
+.lux-visual{position:relative}
+.vf{position:absolute;inset:18px;pointer-events:none;z-index:1;color:var(--fg)}
+.has-photo .vf{color:#FFF}
+.vf i{position:absolute;width:26px;height:26px;border:0 solid currentColor;opacity:.7}
+.vf .tl{top:0;left:0;border-top-width:1px;border-left-width:1px}.vf .tr{top:0;right:0;border-top-width:1px;border-right-width:1px}
+.vf .bl{bottom:0;left:0;border-bottom-width:1px;border-left-width:1px}.vf .br{bottom:0;right:0;border-bottom-width:1px;border-right-width:1px}
+.vf span{position:absolute;font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+.vf-rec{top:8px;left:40px;display:flex;align-items:center;gap:8px}
+.vf-rec::before{content:"";width:6px;height:6px;border-radius:50%;background:#B3261E}
+.vf-tc{bottom:8px;left:40px}
+.vf-fmt{bottom:8px;right:40px}
+.lux-photo .ph{inset:56px}
+.seal{position:absolute;top:-40px;right:-44px;z-index:3;color:var(--gold);background:var(--bg);border-radius:50%;padding:6px}
+.seal svg{display:block}
+.tag-f{position:absolute;z-index:3;background:var(--bg);border:1px solid var(--fg);padding:9px 16px;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--fg)}
+.t1{top:22%;right:-28px}.t2{top:48%;left:-30px}.t3{bottom:22%;right:-36px}
+.np{position:absolute;z-index:3;left:-30px;bottom:-26px;display:flex;align-items:center;gap:14px;background:#111;color:#F5F3EF;padding:14px 22px 14px 14px;min-width:230px}
+.np-play{width:36px;height:36px;border:1px solid var(--gold);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.np-txt{display:grid;gap:3px;flex:1}
+.np-txt b{font-weight:400;font-size:10px;letter-spacing:.32em;text-transform:uppercase}
+.np-txt i{font-family:var(--f-display);font-size:15px}
+.np-bar{display:block;height:1px;background:rgba(245,243,239,.25);margin-top:6px}
+.np-bar span{display:block;height:1px;width:45%;background:var(--gold)}
+@media (max-width:860px){.seal{right:-6px;top:-30px}.seal svg{width:104px;height:104px}.t1,.t3{right:-6px}.t2{left:-6px}.np{left:-6px}}
+@media (prefers-reduced-motion:no-preference){
+  .seal svg{animation:spin 24s linear infinite}
+  .tag-f,.np{animation:luxFloat 7s ease-in-out infinite}
+  .t2{animation-duration:8.5s;animation-delay:-2s}.t3{animation-duration:9.5s;animation-delay:-4s}.np{animation-duration:8s;animation-delay:-1s}
+  @keyframes luxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .np-bar span{animation:npBar 8s linear infinite}
+  @keyframes npBar{from{width:0}to{width:100%}}
+  .vf-rec::before{animation:luxPulse 1.4s ease-in-out infinite}
+  .lux-photo{overflow:visible}
+}
 </style>
 </head>
 <body>
@@ -385,52 +530,44 @@ nav a.on{color:var(--fg);background:var(--blush)}
 </header>
 
 <main>
-  <section class="wrap hero3">
-    <div class="floaters" aria-hidden="true">
-      <svg style="left:48%;top:8%;width:18px;height:18px"><use href="#sp"/></svg>
-      <svg style="left:94%;top:78%;width:14px;height:14px"><use href="#sp"/></svg>
-      <svg style="left:52%;bottom:10%;width:22px;height:22px"><use href="#sp"/></svg>
-    </div>
-    <div class="h3-visual">
-      <div class="ghost g1" aria-hidden="true"><span class="gtag">Beauty · GRWM</span><span class="gplay"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></div>
-      <div class="ghost g2" aria-hidden="true"><span class="gtag">Tech · Unboxing</span><span class="gplay"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span></div>      <figure class="photo photo3" id="portrait">
-        <div class="ph">
-          <svg width="120" height="150" viewBox="0 0 120 150" fill="currentColor" aria-hidden="true"><circle cx="60" cy="46" r="28"/><path d="M8 150c0-34 23-58 52-58s52 24 52 58z"/></svg>
-          <small>Your photo here</small>
-        </div>
-        <div class="cam" aria-hidden="true">
-          <span class="rec">REC</span><span class="tcode" id="tcode">00:00:00</span>
-        </div>
+  <section class="wrap lux-hero">
+    <div class="lux-visual">
+      <figure class="lux-photo" id="portrait">
+        <div class="ph"><span>Portrait</span></div>
+        <div class="vf" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i><span class="vf-rec">Rec</span><span class="vf-tc" id="tcode">00:00:00</span><span class="vf-fmt">9:16 · 4K</span></div>
       </figure>
-      <div class="sticker" aria-hidden="true">
-        <svg viewBox="0 0 120 120" width="118" height="118">
-          <defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
-          <text font-family="DM Mono, monospace" font-size="10.5" letter-spacing="3" fill="currentColor"><textPath href="#circ">UGC CREATOR · REAL CONTENT · </textPath></text>
-          <use href="#sp" x="46" y="46" width="28" height="28"/>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 120 120" width="132" height="132">
+          <defs><path id="lcirc" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <text font-family="Jost, sans-serif" font-size="8.6" letter-spacing="4.2" fill="currentColor"><textPath href="#lcirc">UGC CREATOR · REAL CONTENT · </textPath></text>
+          <text x="60" y="68" text-anchor="middle" font-family="Bodoni Moda, serif" font-style="italic" font-size="26" fill="currentColor">BC</text>
         </svg>
       </div>
-      <div class="mini" aria-hidden="true">
-        <span class="mini-play"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
-        <span class="mini-txt"><b>New video</b><i>Unboxing · 0:30</i><span class="mini-bar"><span></span></span></span>
+      <span class="tag-f t1" aria-hidden="true">Tech</span>
+      <span class="tag-f t2" aria-hidden="true">Beauty</span>
+      <span class="tag-f t3" aria-hidden="true">Lifestyle</span>
+      <div class="np" aria-hidden="true">
+        <span class="np-play"><svg width="10" height="10" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
+        <span class="np-txt"><b>Now playing</b><i>Unboxing — 0:30</i><span class="np-bar"><span></span></span></span>
       </div>
-      <div class="fc fc1" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>Tech</div>
-      <div class="fc fc2" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21h6M10 21V11h4v10M9.5 11l1-6h3l1 6"/></svg>Beauty</div>
-      <div class="fc fc3" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 9h12v5a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M9 3.5v2M12 3.5v2"/></svg>Lifestyle</div>
+      <div class="lux-cap"><span>Dominican Republic</span><span>Worldwide</span></div>
     </div>
-    <div class="h3-copy">
-      <div class="h3-top"><div class="eyebrow"><svg class="spark" aria-hidden="true"><use href="#sp"/></svg>UGC content creator</div><span class="avail"><span class="dot"></span>Booking first collabs</span></div>
+    <div class="lux-copy">
+      <div class="lux-kicker">UGC Content Creator</div>
       <h1><span data-bind="name">Bel Colon</span></h1>
-      <p class="h3-rot">Content that feels <span class="rot" id="rot" aria-live="off"><span class="cur">authentic</span><span>aesthetic</span><span>relatable</span><span>scroll-stopping</span></span></p>
-      <p class="h3-sub">Bilingual <span aria-hidden="true">—</span> based in the DR, working worldwide.</p>
-      <div class="ctas">
-        <a class="btn btn-solid" href="#contact">Let's work together</a>
-        <a class="btn btn-line" href="#work">See my work</a>
+      <div class="lux-rule"></div>
+      <p class="lux-niches">Tech <span>—</span> Beauty <span>—</span> Lifestyle</p>
+      <p class="lux-line">Content that feels <span class="rot" id="rot" aria-live="off"><span class="cur">authentic</span><span>effortless</span><span>timeless</span><span>refined</span></span></p>
+      <div class="lux-ctas">
+        <a class="btn btn-solid" href="#contact">Work with me</a>
+        <a class="lux-link" href="#work">View portfolio</a>
       </div>
-      <dl class="h3-facts">
+      <dl class="lux-facts">
         <div><dt>Delivery</dt><dd><span data-bind="delivery">5–7</span> days</dd></div>
         <div><dt>Format</dt><dd>9:16 · 1080p</dd></div>
         <div><dt>Languages</dt><dd>ES · EN</dd></div>
       </dl>
+      <p class="lux-avail"><span></span>Now booking collaborations</p>
     </div>
   </section>
 
@@ -507,7 +644,7 @@ nav a.on{color:var(--fg);background:var(--blush)}
     <div class="head">
       <div>
         <div class="eyebrow"><svg class="spark" aria-hidden="true"><use href="#sp"/></svg>Why work with me</div>
-        <h2>New creator, <em>big energy</em></h2>
+        <h2>A fresh face, <em>a careful eye</em></h2>
       </div>
       <p class="lead">I'm at the start of my UGC journey, and that works in your favor.</p>
     </div>
@@ -579,7 +716,7 @@ nav a.on{color:var(--fg);background:var(--blush)}
     <div class="wrap" style="padding-block:96px 0">
       <div class="eyebrow"><svg class="spark" aria-hidden="true"><use href="#sp"/></svg>Contact</div>
       <div class="contact-in">
-        <h2>Let's create something <em>cute</em> that sells.</h2>
+        <h2>Let's create something <em>beautiful</em> together.</h2>
         <div class="channels">
           <div class="mail" data-need="email"><span id="email" data-bind="email"></span><button class="copy" id="copy-email" type="button">Copy email</button></div>
           <a id="ig-link" data-need="handle" href="https://instagram.com/" target="_blank" rel="noopener">Instagram · @<span data-bind="handle"></span></a>
