@@ -24,7 +24,14 @@ window.PORTFOLIO = {
   idiomas:    "Spanish · English",
   collabstr:  "",                    // Enlace completo, empieza con https://
   sideshift:  "",                    // Enlace completo, empieza con https://
-  foto:       "",                    // Ej: "foto.jpg"
+  foto:       "",                    // Ej: "foto.jpg"  (portada)
+
+  // Más fotos tuyas dentro de la página (si dejas una vacía, se ve un recuadro de ejemplo)
+  fotoSobreMi:   "",                 // Tú grabando: celular en tripié, luz, escritorio
+  fotoTech:      "",                 // Tú con un gadget: audífonos, laptop, teléfono
+  fotoBeauty:    "",                 // Tú con un producto de cuidado personal
+  fotoLifestyle: "",                 // Tú en casa: café, planta, mesa, rutina
+  fotoContacto:  "",                 // Retrato sonriendo, mirando a la cámara
 
   // Datos técnicos (si dejas uno vacío, esa fila no aparece)
   camara:     "",                    // Ej: "iPhone 13"
@@ -609,6 +616,36 @@ h2{font-weight:500;letter-spacing:-.005em}
 @media (prefers-reduced-motion:reduce){.clip:hover .frame,.clip.tap .frame{transform:none!important;animation:none}}
 .lux-bio{margin:18px 0 0;max-width:46ch;font-size:16.5px;line-height:1.65;color:var(--muted);font-weight:400}.lux-sep{color:var(--gold);margin:0 6px}
 @media (prefers-reduced-motion:no-preference){.lux-copy > :nth-child(9){animation-delay:.8s}}
+/* Fotos dentro de la página */
+.xphoto{position:relative;margin:0;overflow:hidden;background:linear-gradient(180deg,var(--band),var(--blush))}
+.xphoto > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.xphoto.has-photo .xph{display:none}
+.xph{position:absolute;inset:16px;border:1px solid rgba(46,32,25,.18);display:grid;place-content:center;justify-items:center;gap:6px;text-align:center;padding:12px}
+.xph span{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:26px;color:var(--fg)}
+.xph small{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,6vw,96px);align-items:center}
+@media (max-width:860px){.about{grid-template-columns:minmax(0,1fr)}}
+.about-photo{aspect-ratio:4/5}
+.about-copy .lead{margin-top:22px}
+.about-list{list-style:none;padding:0;margin:32px 0 0;border-top:1px solid var(--line)}
+.about-list li{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.about-list b{min-width:110px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.about-list span{color:var(--fg)}
+.niche-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:0 0 28px}
+@media (max-width:700px){.niche-photos{grid-template-columns:minmax(0,1fr)}}
+.niche-photos .xphoto{aspect-ratio:3/4}
+.niche-photos figcaption{position:absolute;left:16px;bottom:16px;z-index:1;background:var(--bg);padding:8px 14px;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.niche-photos .xph span{display:none}
+.contact-photo{width:160px;height:160px;border-radius:50%;flex:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25)}
+.contact-photo .xph{inset:10px;border-radius:50%;border-color:rgba(255,255,255,.25)}
+.contact-photo .xph small{color:rgba(255,255,255,.7)}
+.contact-in{align-items:center}
+@media (prefers-reduced-motion:no-preference){
+  .xphoto > img{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  .xphoto:hover > img{transform:scale(1.05)}
+  .niche-photos .xphoto{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .niche-photos .xphoto:hover{transform:translateY(-8px)}
+}
 </style>
 </head>
 <body>
@@ -727,12 +764,31 @@ h2{font-weight:500;letter-spacing:-.005em}
     </div>
   </section>
 
+  <section id="about" class="wrap sec about">
+    <figure class="xphoto about-photo" data-photo="fotoSobreMi"><div class="xph"><span>Behind the camera</span><small>Foto: tú grabando</small></div></figure>
+    <div class="about-copy">
+      <div class="eyebrow">About me</div>
+      <h2>Engineer by training, <em>creator by heart</em></h2>
+      <p class="lead">I studied chemical engineering, so I'm curious about how things are made and why they work. I bring that same eye to every video: I test the product, find what really matters to your customer and show it in a way that feels honest and easy to follow.</p>
+      <ul class="about-list">
+        <li><b>Tech</b><span>Specs and features, explained simply</span></li>
+        <li><b>Beauty</b><span>Ingredients and results, shown honestly</span></li>
+        <li><b>Lifestyle</b><span>Products in real, everyday moments</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="services" class="wrap sec">
     <div class="head">
       <div>
         <div class="eyebrow"><svg class="spark" aria-hidden="true"><use href="#sp"/></svg>Services</div>
         <h2>What I <em>create</em> for your brand</h2>
       </div>
+    </div>
+    <div class="niche-photos">
+      <figure class="xphoto" data-photo="fotoTech"><div class="xph"><span>Tech</span><small>Foto: tú con un gadget</small></div><figcaption>Tech</figcaption></figure>
+      <figure class="xphoto" data-photo="fotoBeauty"><div class="xph"><span>Beauty</span><small>Foto: tú con un producto</small></div><figcaption>Beauty</figcaption></figure>
+      <figure class="xphoto" data-photo="fotoLifestyle"><div class="xph"><span>Lifestyle</span><small>Foto: tú en casa</small></div><figcaption>Lifestyle</figcaption></figure>
     </div>
     <div class="grid-svc">
       <div class="svc"><span class="tag">Video</span><h3>Testimonial</h3><p>An honest review on camera: the problem, how I use it and what I love about it.</p></div>
@@ -820,6 +876,7 @@ h2{font-weight:500;letter-spacing:-.005em}
     <div class="wrap" style="padding-block:96px 0">
       <div class="eyebrow"><svg class="spark" aria-hidden="true"><use href="#sp"/></svg>Contact</div>
       <div class="contact-in">
+        <figure class="xphoto contact-photo" data-photo="fotoContacto"><div class="xph"><small>Tu retrato</small></div></figure>
         <h2>Let's create something <em>beautiful</em> together.</h2>
         <div class="channels">
           <div class="mail" data-need="email"><span id="email" data-bind="email"></span><button class="copy" id="copy-email" type="button">Copy email</button></div>
@@ -862,6 +919,15 @@ h2{font-weight:500;letter-spacing:-.005em}
   if (data.collabstr) document.getElementById('collabstr-link').href = data.collabstr;
   if (data.sideshift) document.getElementById('sideshift-link').href = data.sideshift;
   document.title = data.name + ' · UGC Creator';
+
+  document.querySelectorAll('[data-photo]').forEach(function(fig){
+    var src = clean(C[fig.dataset.photo]); if (!src) return;
+    var im = document.createElement('img');
+    im.alt = data.name; im.loading = 'lazy';
+    im.onload = function(){ fig.classList.add('has-photo'); };
+    im.onerror = function(){ im.remove(); console.warn('No se encontró la foto: ' + src); };
+    im.src = src; fig.insertBefore(im, fig.firstChild);
+  });
 
   var photo = document.getElementById('portrait');
   if (photo && data.photo) {
